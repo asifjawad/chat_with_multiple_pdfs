@@ -1,7 +1,8 @@
 streamlit
-pypdf2
+PyPDF2
 langchain
 python-dotenv
 faiss-cpu
 openai
 huggingface_hub
+openpyxl
