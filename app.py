@@ -1,11 +1,6 @@
 import streamlit as st
 from dotenv import load_dotenv
-from src.utils import get_pdf_text
-
-# from PyPDF2 import PdfReader
-
-
-
+from src.utils import get_pdf_text, get_text_chunks, get_vector_store
 
 def main():
     load_dotenv()
@@ -22,11 +17,14 @@ def main():
             with st.spinner("Uploading files"):
                 # get pdf
                 raw_text = get_pdf_text(pdf_docs)
-                st.write(raw_text)
 
                 # get the chunks
 
+                chunks_text = get_text_chunks(raw_text)
+                # st.write(chunks_text)
+
                 # create vector store
+                vectors = get_vector_store(chunks_text)
 
 
 if __name__ == '__main__':
