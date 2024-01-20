@@ -37,7 +37,7 @@ def main():
     if "chat_history" not in st.session_state:
         st.session_state.chat_history = None
 
-    st.header("Chatting with several PDFs :")
+    st.header("Ask Question From your PDFs :")
     user_question = st.text_input("What you want to know from your uploaded pdfs")
 
     if user_question:
